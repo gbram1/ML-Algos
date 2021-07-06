@@ -1,0 +1,45 @@
+#Chapter 3 Classification with MNIST dataset
+
+#scipt to fetch the dataset
+from sklearn.datasets import fetch_openml
+mnist = fetch_openml('mnist_784')
+mnist
+
+x, y = mnist["data"], mnist["target"]
+x.shape
+y.shape
+
+#grabbing an instance and showing it using imshow() and the pixel counts
+import matplotlib
+import matplotlib.pyplot as plt
+
+some_digit = x[36000]
+some_digit_image = some_digit.reshape(28,28)
+plt.imshow(some_digit_image, cmap = matplotlib.cm.binary, interpolation = "nearest")
+plt.axis("off")
+plt.show()
+y[36000]
+
+#Training set and test set
+x_train, x_test, y_train, y_test = x[:60000], x[60000:], y[:60000], y[60000:]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
